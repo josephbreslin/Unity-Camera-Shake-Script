@@ -14,10 +14,11 @@ public class CameraShake : MonoBehaviour {
     [Range(0, 10)]
     public string damageButton;
 
-    void Start () {
-        shakingCamera = this.transform;
-        Mathf.Clamp(shakeScale, 0f, 1f);
-	  }
+    void Start () 
+    {
+	shakingCamera = this.transform;
+	Mathf.Clamp(shakeScale, 0f, 1f);
+    }
 
     void DecreaseShakeScale()
     {
@@ -51,24 +52,28 @@ public class CameraShake : MonoBehaviour {
         transform.position = shakingCamera.position;
     }
     
-    float Shake(){
+    float Shake()
+    {
         return shakeScale * shakeScale;
     }  
 
-    float GetRandomFloatNegOneToOne(){
+    float GetRandomFloatNegOneToOne()
+    {
         return Random.Range(-1f, 1f);        
     }
 
-    float Offset(){
+    float Offset()
+    {
         return maxOffset * Shake() * GetRandomFloatNegOneToOne();
     }
 
-    float Angle() {
+    float Angle() 
+    {
         return maxAngle * Shake() * GetRandomFloatNegOneToOne();
     }
 
-    //TODO Create Perlin noise that returns -1, 1 with seed 
-    float GetPerlinNoise(float seed) {
+    float GetPerlinNoise() 
+    {
         return Mathf.PerlinNoise(-1, 1);
     }
 
