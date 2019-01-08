@@ -1,4 +1,4 @@
-//Camera shake, Attcach to camera, increase shakeScale variable for shake
+//Camera shake, Add to camera, increase shakeScale variable for shake
 using UnityEngine;
 
 public class CameraShake : MonoBehaviour {
